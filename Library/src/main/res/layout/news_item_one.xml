@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#eaeaea">
+
+    <RelativeLayout
+        android:id="@+id/rlRoot"
+        android:background="#fff"
+        android:layout_marginTop="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="90dp">
+
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="118dp"
+            android:layout_height="66dp"
+            android:layout_marginLeft="9dp"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY" />
+
+        <RelativeLayout
+            android:id="@+id/rlTip"
+            android:layout_width="118dp"
+            android:layout_height="66dp"
+            android:layout_marginLeft="9dp"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/news_ico_b_72"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="13dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/ivImage"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textSize="15sp"
+            android:textColor="#333333"
+            tools:text="sdfsdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsfs" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="13dp"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/ivImage"
+            android:layout_alignBottom="@id/ivImage">
+
+            <TextView
+                android:id="@+id/tvSource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#9f9f9f"
+                android:textSize="13sp"
+                tools:text="india.com"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:id="@+id/tvRecomCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textColor="#9f9f9f"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/ivRecom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/heart_ico_28_l"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/tvRecomCount"
+                android:layout_marginRight="5dp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

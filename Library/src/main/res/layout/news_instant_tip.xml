@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/instant_tip">
+
+
+            <TextView
+                android:id="@+id/tvTip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="27dp"
+                android:layout_marginRight="27dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/quick_tip"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:id="@+id/llDontRemind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTip"
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="12dp">
+
+                <ImageView
+                    android:id="@+id/ivTick"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/tick_btn_g_28" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
+                    android:text="@string/do_not_remind"
+                    android:textColor="#9f9f9f"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/llDontRemind"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/tvNo"
+                    android:layout_width="116dp"
+                    android:layout_height="34dp"
+                    android:textColor="#9f9f9f"
+                    android:text="@string/no"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:background="@drawable/instant_tip_no"/>
+                <TextView
+                    android:id="@+id/tvYes"
+                    android:layout_width="116dp"
+                    android:layout_height="34dp"
+                    android:textColor="#fff"
+                    android:text="@string/yes"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:background="@drawable/instant_tip_yes"
+                    android:layout_marginLeft="24dp"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

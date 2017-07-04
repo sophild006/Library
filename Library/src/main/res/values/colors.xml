@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="callRecordColor">#349dff</color>
+    <color name="freeWifiColor">#60B3FA</color>
+    <color name="refreshBgColor">#ffffff</color>
+    <color name="refreshColor">#7BC8BD</color>
+    <color name="wifiColor">#FFD105</color>
+
+</resources>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f9f9f9">
+
+    <RelativeLayout
+        android:id="@+id/rlRoot"
+        android:layout_marginTop="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="#f9f9f9">
+
+        <RelativeLayout
+            android:id="@+id/rlIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp">
+
+            <ImageView
+                android:id="@+id/ad_icon_view"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/ad_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="14dp"
+            android:layout_toRightOf="@id/rlIcon"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxWidth="150dp"
+            android:textColor="#333"
+            android:textSize="16sp"
+            tools:text="sdfsafadsfdddddddddddddddddddddddddddddddddddddddddasfsaf" />
+
+        <TextView
+            android:id="@+id/ad_body_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ad_title_text"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@id/rlIcon"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxWidth="150dp"
+            android:textColor="#b3333333"
+            android:textSize="14sp"
+            tools:text="sdfsafadsfdasdfsdfdsfsdfsdfsdfsdffdssfsaf" />
+
+        <TextView
+            android:id="@+id/ad_call_to_action_text"
+            android:layout_width="96dp"
+            android:layout_height="34dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/ad_item_download_bg"
+            android:gravity="center"
+            android:text="@string/download"
+            android:textColor="#fff"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e2e2e2"
+            android:layout_alignParentBottom="true"/>
+        <ImageView
+            android:id="@+id/ad_privacy_view"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_alignParentRight="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/ad_label_g_46"/>
+    </RelativeLayout>
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

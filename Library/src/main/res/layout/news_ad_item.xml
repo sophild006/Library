@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#efefef">
+
+    <RelativeLayout
+        android:id="@+id/rlRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/news_item_bg">
+
+        <RelativeLayout
+            android:id="@+id/rlIconTitle"
+            android:layout_width="match_parent"
+            android:layout_height="73dp"
+            android:layout_marginTop="14dp"
+            android:background="#fff">
+
+            <RelativeLayout
+                android:id="@+id/rlIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp">
+
+                <ImageView
+                    android:id="@+id/ad_icon_view"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitXY" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/ad_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@id/rlIcon"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxWidth="200dp"
+                android:textColor="#333"
+                android:textSize="16sp"
+                tools:text="sdfsafadsfdddddddddddddddddddddddddddddddddddddddddasfsaf" />
+
+            <TextView
+                android:id="@+id/ad_body_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ad_title_text"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="6dp"
+                android:layout_toRightOf="@id/rlIcon"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxWidth="200dp"
+                android:textColor="#b3333333"
+                android:textSize="14sp"
+                tools:text="sdfsafadsfdasdfsdfdsfsdfsdfsdfsdffdssfsaf" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlImage"
+            android:layout_width="match_parent"
+            android:layout_height="154dp"
+            android:layout_below="@id/rlIconTitle">
+
+            <ImageView
+                android:id="@+id/ad_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="154dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="6dp"
+                android:scaleType="fitXY" />
+
+            <com.facebook.ads.MediaView
+                android:id="@+id/ad_media_view_facebook"
+                android:layout_width="match_parent"
+                android:layout_height="154dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="6dp"
+                android:scaleType="fitXY" />
+        </RelativeLayout>
+
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ad_ico_g_40" />
+
+        <ImageView
+            android:id="@+id/ad_privacy_view"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="2dp" />
+
+        <TextView
+            android:id="@+id/ad_call_to_action_text"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_below="@id/rlImage"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/ad_item_download_bg"
+            android:gravity="center"
+            android:text="@string/download"
+            android:textColor="#fff"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="3dp"-->
+    <!--android:layout_below="@id/rl"-->
+    <!--android:background="#efefef" />-->
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

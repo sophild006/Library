@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Library</string>
+    <string name="click_dislike">We will reduce the news like this</string>
+    <string name="dislike">Dislike</string>
+    <string name="do_not_remind">Do not remind again</string>
+    <string name="download">DOWNLOAD</string>
+    <string name="expressed">You have expressed your attitude</string>
+    <string name="instant">Instant</string>
+    <string name="like">Like</string>
+    <string name="loading">NEWS LOADING...</string>
+    <string name="may_like">You may also like</string>
+    <string name="native_privacy_information_icon_image">Privacy Information Icon image</string>
+    <string name="news_detail_tip">Too slow? Tap to view instantly</string>
+    <string name="news_update"> News Update!</string>
+    <string name="no">NO</string>
+    <string name="original">Original</string>
+    <string name="quick_tip">Whether to turn on Quick View pattern? It saves phone traffic and make you view instantly.</string>
+    <string name="related_reading">Related Reading</string>
+    <string name="updating_now">Updating Now</string>
+    <string name="view_origin">View original article</string>
+    <string name="view_source">View Source</string>
+    <string name="yes">YES</string>
+</resources>

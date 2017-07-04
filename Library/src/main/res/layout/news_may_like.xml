@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="3dp"
+        android:layout_height="10dp"
+        android:layout_gravity="center_vertical"
+        android:background="#7bc7bd"/>
+
+    <TextView
+        android:id="@+id/tvMayLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="6dp"
+        android:textColor="#333"
+        android:textSize="14sp"
+        android:text="@string/may_like"/>
+</LinearLayout>
