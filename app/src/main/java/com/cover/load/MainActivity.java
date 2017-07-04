@@ -1,8 +1,7 @@
 package com.cover.load;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.View;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -10,9 +9,7 @@ import android.widget.TextView;
 
 import com.solid.news.sdk.NewsSdk;
 
-import static com.solid.news.util.Constant.activity;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NewsSdk.JumpDetailListener, NewsSdk.LoadNewsListener {
     private RelativeLayout viewContainer, unNetView, loadFiledLayout;
     private RelativeLayout newsTitleRl;
     private ImageView newsNetStatusIv, retryIv;
@@ -39,34 +36,28 @@ public class MainActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putString("key", "");
         v = NewsSdk.getInstance().getNewsView(this, this, null);
-        private View view, v;.removeAllViews();
-        ontainer.addView(v);
-        activity.setCurrentListener(new VpMainActivity.CurrentItemListener() {
-            @Override
-            public void currentItemer(int item) {
-                if (item == 0) {
-                    isDetails = false;
-                    if (activity.ager.getCurrentItem() == 0 && isLoadSuccess) {
-                        startTime = System.currentTimeMillis();
-                        L.d("wwq", "startTime: " + startTime);
-                    }
-                    L.d("wwq", "currentItemer");
-                } else if (!isDetails) {
-                    L.d("wwq", "other item");
-                    isDetails = true;
-                    if (startTime != 0) {
-                        L.d("wwq", "send evnet");
-                        Tools.sendEvent((System.currentTimeMillis() - startTime) / 1000);
-                    }
-                }
-            }
-        });
+        viewContainer.removeAllViews();
+        viewContainer.addView(v);
+
         retryIv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                retryLoad();
             }
         });
     }
-}
+
+    @Override
+    public void jumpDetail() {
+
+    }
+
+    @Override
+    public void loadNewsSucc() {
+
+    }
+
+    @Override
+    public void loadNewsError() {
+
+    }
 }
