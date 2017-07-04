@@ -6,9 +6,9 @@
 package com.solid.news.logic;
 
 import com.facebook.ads.NativeAd;
+import com.solid.ad.Ad;
 import com.solid.news.bean.NewsData;
 import com.solid.news.db.NewsDBUtils;
-import com.solid.news.logic.ConfigCacheMgr;
 import com.solid.news.sdk.NewsSdk;
 import com.solid.news.util.L;
 import java.util.ArrayList;
@@ -24,6 +24,7 @@ public class NewsCacheMgr {
     private static Random random = new Random();
     private static ArrayList<HashMap<String, NativeAd>> adCache1 = new ArrayList();
     public static ArrayList<HashMap<String, NativeAd>> adRegistedList = new ArrayList();
+    public static Ad firstAd;
 
     private NewsCacheMgr() {
     }

@@ -101,7 +101,7 @@ public class NewsDetailActivity extends BaseActivity {
             if (NewsDetailActivity.this.isStartLine && NewsDetailActivity.this.currentType == 0) {
                 NewsDetailActivity.this.startLineAnimator();
             } else {
-                NewsDetailActivity.this.rlLine.setVisibility(8);
+                NewsDetailActivity.this.rlLine.setVisibility(View.GONE);
             }
 
         }
@@ -402,7 +402,7 @@ public class NewsDetailActivity extends BaseActivity {
 
             NewsSdk.getInstance().getReportListener().sendEvent(Constant.news_detail_instant, (String) null, (Long) null);
             this.scrollerLayout.setCurrentItem(1);
-            this.rlLine.setVisibility(8);
+            this.rlLine.setVisibility(View.GONE);
         }
 
     }
@@ -427,7 +427,7 @@ public class NewsDetailActivity extends BaseActivity {
         settings.setJavaScriptEnabled(true);
         settings.setBuiltInZoomControls(false);
         settings.setUseWideViewPort(true);
-        settings.setCacheMode(2);
+        settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
         this.webView.setWebViewClient(new WebViewClient() {
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 view.loadUrl(url);
@@ -452,8 +452,8 @@ public class NewsDetailActivity extends BaseActivity {
                     L.i("qglwebviewpage", "onPageFinished");
                     NewsDetailActivity.this.isLoading = false;
                     NewsDetailActivity.this.isLoadSucc = true;
-                    NewsDetailActivity.this.llTipRoot.setVisibility(8);
-                    NewsDetailActivity.this.rlLine.setVisibility(8);
+                    NewsDetailActivity.this.llTipRoot.setVisibility(View.GONE);
+                    NewsDetailActivity.this.rlLine.setVisibility(View.GONE);
                     boolean b = System.currentTimeMillis() - NewsDetailActivity.this.startTime < 5000L;
                     boolean isInstant = LogicSettingMgr.getInstance().getIsInstant();
                     if (!isInstant && !NewsDetailActivity.this.isChanged && b) {
@@ -497,6 +497,8 @@ public class NewsDetailActivity extends BaseActivity {
         animator.setInterpolator(new LinearInterpolator());
         animator.start();
     }
+
+    ImageView ivLike;
 
     private View getInstantView() {
         View instantView = View.inflate(context, layout.news_news_detail_instant, (ViewGroup) null);
@@ -573,8 +575,6 @@ public class NewsDetailActivity extends BaseActivity {
 
             llContain.addView(rlLike, tvViewSource);
         }
-
-        ImageView ivLike;
         for (sourceView = 0; sourceView < this.newsData.news_content.length; ++sourceView) {
             Content var48 = this.newsData.news_content[sourceView];
             if (var48.type.equals("img")) {
@@ -690,7 +690,7 @@ public class NewsDetailActivity extends BaseActivity {
                 if (!TextUtils.isEmpty(mayLikeNews.news_img.trim())) {
                     Picasso.with(context).load(mayLikeNews.news_img).into(ivImage, new Callback() {
                         public void onSuccess() {
-                            rlTip.setVisibility(8);
+                            rlTip.setVisibility(View.GONE);
                         }
 
                         public void onError() {
@@ -719,7 +719,7 @@ public class NewsDetailActivity extends BaseActivity {
         if (!LogicSettingMgr.getInstance().getIsProMode()) {
             L.i("qgl", "开始获取新闻大广告了");
             final boolean isCache = AdSdk.shared(this).adCached("news_detail");
-            AdSdk.shared(this).loadAd(this,this.createBigAdRequest(this.adContain),new AdListenerBase<Ad>(){
+            AdSdk.shared(this).loadAd(this, this.createBigAdRequest(this.adContain), new AdListenerBase<Ad>() {
                 @Override
                 public void onLoaded(Ad ad) {
                     super.onLoaded(ad);
@@ -775,7 +775,7 @@ public class NewsDetailActivity extends BaseActivity {
         int likeCount = NewsDBUtils.getInstance().getNewsRecomCount(this.newsData.id);
         if (isClick) {
             if (isExpress) {
-                Toast.makeText(context, context.getResources().getString(string.expressed), 0).show();
+                Toast.makeText(context, context.getResources().getString(string.expressed), Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -799,12 +799,12 @@ public class NewsDetailActivity extends BaseActivity {
                 type.addListener(new AnimatorListenerAdapter() {
                     public void onAnimationStart(Animator animation) {
                         super.onAnimationStart(animation);
-                        llLikeAnimator.setVisibility(0);
+                        llLikeAnimator.setVisibility(View.VISIBLE);
                     }
 
                     public void onAnimationEnd(Animator animation) {
                         super.onAnimationEnd(animation);
-                        llLikeAnimator.setVisibility(4);
+                        llLikeAnimator.setVisibility(View.INVISIBLE);
                     }
                 });
                 type.start();
@@ -812,7 +812,7 @@ public class NewsDetailActivity extends BaseActivity {
                 NewsSdk.getInstance().getReportListener().sendEvent(Constant.news_detail_dislike, (String) null, (Long) null);
                 disLikeImageView.setImageResource(drawable.dislike_ico_42_r);
                 NewsDBUtils.getInstance().express(this.newsData.id, 0);
-                Toast.makeText(context, context.getResources().getString(string.click_dislike), 0).show();
+                Toast.makeText(context, context.getResources().getString(string.click_dislike),Toast.LENGTH_SHORT).show();
             }
         } else {
             if (isExpress) {
