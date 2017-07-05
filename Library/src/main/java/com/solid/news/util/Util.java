@@ -65,4 +65,9 @@ public class Util {
         int second = (int)(System.currentTimeMillis() - date1.getTime()) / 1000;
         return second;
     }
+    public static int getScreenWidthInDp(Context context) {
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        int dpScreenWidth = (int) (displayMetrics.widthPixels / displayMetrics.density);
+        return dpScreenWidth;
+    }
 }

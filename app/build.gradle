@@ -4,11 +4,12 @@ android {
     compileSdkVersion 24
     buildToolsVersion "24.0.3"
     defaultConfig {
-        applicationId "com.cover.load"
+        applicationId "com.free.wifi.update"
         minSdkVersion 14
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     signingConfigs {
         release {
@@ -68,8 +69,15 @@ andResGuard {
         artifact = 'com.tencent.mm:SevenZip:1.2.3'
     }
 }
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    jcenter()
+}
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':Library')
+    compile 'com.android.support:multidex:1.0.1'
 }

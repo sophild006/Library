@@ -1,12 +1,14 @@
-package com.cover.load;
+package com.free.wifi.update;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.cover.load.R;
 import com.solid.news.sdk.NewsSdk;
 
 public class MainActivity extends AppCompatActivity implements NewsSdk.JumpDetailListener, NewsSdk.LoadNewsListener {
@@ -38,26 +40,42 @@ public class MainActivity extends AppCompatActivity implements NewsSdk.JumpDetai
         v = NewsSdk.getInstance().getNewsView(this, this, null);
         viewContainer.removeAllViews();
         viewContainer.addView(v);
-
         retryIv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                retryLoad();
             }
         });
+    }
+    private void retryLoad() {
+        loadFiledLayout.setVisibility(View.GONE);
+        Bundle bundle = new Bundle();
+        bundle.putString("key", "");
+        v = NewsSdk.getInstance().getNewsView(this, this, null);
+        viewContainer.removeAllViews();
+        viewContainer.addView(v);
+        viewContainer.setVisibility(View.VISIBLE);
+        unNetView.setVisibility(View.GONE);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        NewsSdk.getInstance().notifyData();
     }
 
     @Override
     public void jumpDetail() {
-
+        Log.d("wwq","jumpDetail");
     }
 
     @Override
     public void loadNewsSucc() {
-
+        Log.d("wwq","loadNewsSucc");
     }
 
     @Override
     public void loadNewsError() {
-
+        Log.d("wwq","loadNewsError");
     }
 }

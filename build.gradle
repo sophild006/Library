@@ -12,12 +12,23 @@ buildscript {
     }
 }
 
+
 allprojects {
     repositories {
         jcenter()
+        maven {
+            url 'http://172.16.10.221:8081/repository/maven-releases/'
+        }
+        maven {
+            url 'http://172.16.10.221:8081/repository/maven-snapshots/'
+        }
     }
-}
 
+
+}
+subprojects {
+    task allDeps(type: DependencyReportTask) {}
+}
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
